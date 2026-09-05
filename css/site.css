@@ -381,7 +381,8 @@ html.review .page-head { min-height: 560px; }
 /* Arabic, right-to-left. Alexandria carries both scripts; joins need no letter-spacing and a little more leading. */
 [dir="rtl"] { font-weight: 400; }
 [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 { letter-spacing: 0; line-height: 1.28; }
-[dir="rtl"] .hero-media::before { background: linear-gradient(270deg, rgba(8,8,10,0.86) 0%, rgba(8,8,10,0.72) 28%, rgba(8,8,10,0.28) 52%, rgba(8,8,10,0) 70%); }
+/* Arabic hero copy sits on the dark left side of the photo, text right-aligned within its block. */
+[dir="rtl"] .hero-copy { margin-inline-start: auto; margin-inline-end: 0; }
 [dir="rtl"] .hero .en { direction: ltr; text-align: left; font-weight: 500; }
 [dir="rtl"] .numbers > div { border-right: 0; border-inline-end: 1px solid var(--line); }
 [dir="rtl"] .numbers > div:last-child { border-inline-end: 0; }
@@ -399,7 +400,6 @@ html.review .page-head { min-height: 560px; }
 [dir="rtl"] .diagram, [dir="rtl"] .partner { direction: ltr; }
 @media (max-width: 1023px) {
   [dir="rtl"] .navlinks a[aria-current="page"] { box-shadow: inset -3px 0 0 var(--red); padding-left: 4px; padding-right: 14px; }
-  [dir="rtl"] .hero-media::before { background: linear-gradient(180deg, #08080a 0%, rgba(8,8,10,0) 30%); }
 }
 .navlinks .lang { font-weight: 600; color: var(--fg); border: 1px solid var(--line-strong); border-radius: 4px; padding: 8px 12px; margin-inline-start: 6px; }
 .navlinks .lang:hover { border-color: #fff; }
