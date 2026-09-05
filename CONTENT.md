@@ -102,7 +102,7 @@ Offices per city, phones, emails, hours, form, map.
 
 ## Open questions
 1. Years: Riyadh, Dubai, Areena grid, AI rollout.
-2. Total = TotalEnergies? Airport = Queen Alia?
+2. Total = TotalEnergies? (Airport confirmed: Queen Alia International Airport, 5 Sep 2026)
 3. May we name McDonald's and Americana, and the 1990s multinationals?
 4. Impact numbers: women captains, captains with disabilities, captains financed, captains covered.
 5. Contact details, partner logo files.
