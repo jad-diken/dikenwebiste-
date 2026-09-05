@@ -362,8 +362,8 @@ form.contact .status.ok { display: block; background: rgba(202,255,0,0.1); borde
 ::-webkit-scrollbar-track { background: var(--ink); }
 ::-webkit-scrollbar-thumb { background: #2a2a2e; border: 3px solid var(--ink); border-radius: 8px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--red-deep); }
-.skip { position: absolute; left: -999px; top: 8px; z-index: 100; background: var(--red-fill); color: #fff; padding: 10px 14px; border-radius: 4px; }
-.skip:focus { left: 8px; }
+.skip { position: absolute; top: 8px; inset-inline-start: 8px; z-index: 100; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; background: var(--red-fill); color: #fff; padding: 0; border-radius: 4px; }
+.skip:focus { width: auto; height: auto; clip: auto; padding: 10px 14px; }
 
 /* Review captures only: ?review=1 removes viewport-height sizing so full-page screenshots are true. */
 html.review .hero { min-height: auto; }
@@ -377,3 +377,30 @@ html.review .reveal, html.review .numbers b, html.review .hero-copy > *, html.re
 .page-head img.pos-mid { object-position: 50% 45%; }
 
 html.review .page-head { min-height: 560px; }
+
+/* Arabic, right-to-left. Alexandria carries both scripts; joins need no letter-spacing and a little more leading. */
+[dir="rtl"] { font-weight: 400; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 { letter-spacing: 0; line-height: 1.28; }
+[dir="rtl"] .hero-media::before { background: linear-gradient(270deg, rgba(8,8,10,0.86) 0%, rgba(8,8,10,0.72) 28%, rgba(8,8,10,0.28) 52%, rgba(8,8,10,0) 70%); }
+[dir="rtl"] .hero .en { direction: ltr; text-align: left; font-weight: 500; }
+[dir="rtl"] .numbers > div { border-right: 0; border-inline-end: 1px solid var(--line); }
+[dir="rtl"] .numbers > div:last-child { border-inline-end: 0; }
+[dir="rtl"] .timeline .patch { left: auto; inset-inline-start: 0; }
+[dir="rtl"] .door:hover .go .ph { transform: translateX(-4px) scaleX(-1); }
+[dir="rtl"] .door .go .ph, [dir="rtl"] .btn .ph-arrow-right { transform: scaleX(-1); }
+[dir="rtl"] .navlinks .btn { margin-left: 0; margin-inline-start: 8px; }
+[dir="rtl"] .brand { letter-spacing: 0.04em; }
+[dir="rtl"] .brand span { direction: ltr; text-align: left; }
+[dir="rtl"] .brand small { letter-spacing: 0; direction: rtl; text-align: right; }
+[dir="rtl"] .patch { letter-spacing: 0; }
+[dir="rtl"] footer h3 { letter-spacing: 0; text-transform: none; }
+[dir="rtl"] .num, [dir="rtl"] .numbers b { direction: ltr; unicode-bidi: isolate; }
+[dir="rtl"] .steps > div::before { direction: ltr; }
+[dir="rtl"] .diagram, [dir="rtl"] .partner { direction: ltr; }
+@media (max-width: 1023px) {
+  [dir="rtl"] .navlinks a[aria-current="page"] { box-shadow: inset -3px 0 0 var(--red); padding-left: 4px; padding-right: 14px; }
+  [dir="rtl"] .hero-media::before { background: linear-gradient(180deg, #08080a 0%, rgba(8,8,10,0) 30%); }
+}
+.navlinks .lang { font-weight: 600; color: var(--fg); border: 1px solid var(--line-strong); border-radius: 4px; padding: 8px 12px; margin-inline-start: 6px; }
+.navlinks .lang:hover { border-color: #fff; }
+@media (max-width: 1023px) { .navlinks .lang { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 16px 4px; margin: 0; } }
