@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diken Bros — hero preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{--red:#ED1C26;--black:#070707;--white:#fff}
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--black);font-family:Alexandria,system-ui,sans-serif;color:var(--white)}
+  .hero{position:relative;min-height:100vh;overflow:hidden;display:flex;align-items:center}
+  .hero>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% center}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(7,7,7,.88) 0%,rgba(7,7,7,.72) 30%,rgba(7,7,7,.25) 55%,rgba(7,7,7,0) 75%),
+               linear-gradient(0deg,rgba(7,7,7,.75) 0%,rgba(7,7,7,0) 40%)}
+  .wrap{position:relative;z-index:1;padding:clamp(24px,6vw,96px);max-width:1400px;width:100%}
+  .brand{display:flex;align-items:center;gap:14px;margin-bottom:clamp(32px,8vh,96px)}
+  .brand img{height:64px;width:64px;object-fit:cover;object-position:center 42%}
+  .brand span{font-weight:600;letter-spacing:.14em;font-size:14px;opacity:.85}
+  h1{font-size:clamp(32px,4.4vw,62px);line-height:1.06;font-weight:800;max-width:13ch;letter-spacing:-.01em}
+  h1 em{font-style:normal;color:var(--red)}
+  .ar{font-size:clamp(22px,2.6vw,34px);font-weight:600;margin-top:18px;max-width:22ch;line-height:1.5;opacity:.95}
+  .sub{font-size:clamp(16px,1.5vw,21px);margin-top:22px;max-width:40ch;opacity:.85;font-weight:400}
+  .cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap}
+  .btn{padding:16px 28px;border-radius:6px;font-weight:600;text-decoration:none;font-size:16px}
+  .btn.p{background:var(--red);color:#fff}
+  .btn.s{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+  .stats{position:absolute;left:0;right:0;bottom:0;z-index:1;display:flex;gap:0;border-top:1px solid rgba(255,255,255,.14);
+    background:rgba(7,7,7,.55);backdrop-filter:blur(8px)}
+  .stats div{flex:1;padding:18px clamp(12px,3vw,40px);border-right:1px solid rgba(255,255,255,.1)}
+  .stats b{display:block;font-size:clamp(20px,2.2vw,30px);font-weight:800;color:var(--red)}
+  .stats small{font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+  @media (max-width:700px){.stats{display:none}.hero>img.bg{object-position:52% center}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <img class="bg" src="../assets/hero/hero_v5_lineup_scooter.png" alt="Diken rider with partner riders behind">
+  <div class="wrap">
+    <div class="brand"><img src="../../brand identity/logo 34 copy.png" alt="Diken"><span>DIKEN BROS · SINCE 1990</span></div>
+    <h1>At Diken, work looks for you, and <em>no problem goes unsolved.</em></h1>
+    <p class="ar" dir="rtl" lang="ar">عند الدكن، الشغل بدور عليك، وما في مشكلة ما إلها حل.</p>
+    <p class="sub">A job for anyone. A better income for everyone. Distribution, motorcycles, delivery and investments, from Amman to Riyadh and Dubai.</p>
+    <div class="cta"><a class="btn p" href="#">Our divisions</a><a class="btn s" href="#">Contact us</a></div>
+  </div>
+  <div class="stats">
+    <div><b>5,000+</b><small>Captains</small></div>
+    <div><b>20,000+</b><small>Orders every day</small></div>
+    <div><b>JOD 30M+</b><small>Cash collected yearly</small></div>
+    <div><b>80</b><small>Owned vehicles</small></div>
+    <div><b>Since 1990</b><small>Amman · Riyadh · Dubai</small></div>
+  </div>
+</section>
+</body>
+</html>

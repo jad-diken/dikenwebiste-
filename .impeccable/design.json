@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-05T20:10:00+03:00",
+  "title": "Design System: Diken Bros",
+  "extensions": {
+    "colorMeta": {
+      "brand-red": { "role": "primary", "displayName": "Brand Red", "canonical": "#ed1c26", "tonalRamp": ["#3a0508", "#6b0a0f", "#9e0f16", "#d4141d", "#ed1c26", "#ff3b44", "#ff8a90", "#ffd6d8"] },
+      "red-fill": { "role": "primary", "displayName": "Red Fill", "canonical": "#d4141d", "tonalRamp": ["#3a0508", "#6b0a0f", "#9e0f16", "#bf1017", "#d4141d", "#ed1c26", "#ff8a90", "#ffd6d8"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0b0b0c", "tonalRamp": ["#0b0b0c", "#131315", "#1b1b1e", "#2a2a2e", "#4a4a50", "#8a8a90", "#c4c4c2", "#f4f4f2"] },
+      "chalk": { "role": "neutral", "displayName": "Chalk", "canonical": "#f4f4f2", "tonalRamp": ["#0b0b0c", "#2a2a2e", "#4a4a50", "#8a8a90", "#b8b8b6", "#d6d6d4", "#e8e8e6", "#f4f4f2"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only, emphasis words in Brand Red." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings written as sentences with a period." },
+      "label": { "displayName": "Label", "purpose": "Patch text inside tiles; never uppercase, never above a heading." }
+    },
+    "shadows": [
+      { "name": "seam", "value": "inset 0 1px 0 0 #ed1c26", "purpose": "1px red seam along the top of a panel." },
+      { "name": "patch-ring", "value": "inset 0 0 0 3px #1b1b1e, inset 0 0 0 4px rgba(255,255,255,0.18)", "purpose": "Stitched double ring inside a patch." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Reveals, hero rise, hover lifts." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "Reserved for on-screen movement." },
+      { "name": "reveal", "value": "opacity 700ms, transform 700ms, from translateY(18px)", "purpose": "Section reveal once on entry; disabled under reduced motion." },
+      { "name": "press", "value": "transform 160ms, scale(0.97) on :active", "purpose": "Every button." }
+    ],
+    "breakpoints": [
+      { "name": "phone", "value": "560px" },
+      { "name": "tablet", "value": "900px" },
+      { "name": "nav", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one red action on a viewport.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Contact us</a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:10px; min-height:50px; padding:0 24px; border-radius:6px; background:#d4141d; color:#fff; font:600 16px/1 Alexandria, sans-serif; text-decoration:none; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), background-color 200ms ease; } .ds-btn-primary:hover { background:#bf1017; transform:translateY(-1px); } .ds-btn-primary:active { transform:scale(0.97); } .ds-btn-primary:focus-visible { outline:2px solid #ff3b44; outline-offset:3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action beside the primary.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Our divisions</a>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; min-height:50px; padding:0 24px; border-radius:6px; background:transparent; color:#f4f4f2; border:1px solid rgba(255,255,255,0.24); font:600 16px/1 Alexandria, sans-serif; text-decoration:none; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), border-color 200ms ease, background-color 200ms ease; } .ds-btn-ghost:hover { border-color:#fff; background:rgba(255,255,255,0.06); } .ds-btn-ghost:active { transform:scale(0.97); } .ds-btn-ghost:focus-visible { outline:2px solid #ff3b44; outline-offset:3px; }"
+    },
+    {
+      "name": "Patch",
+      "kind": "chip",
+      "refersTo": "patch",
+      "description": "Stitched division mark inside a tile.",
+      "html": "<span class=\"ds-patch\">Delivery &amp; Logistics</span> <span class=\"ds-patch ds-patch-red\">1st</span>",
+      "css": ".ds-patch { display:inline-flex; align-items:center; padding:6px 12px; border-radius:4px; background:#1b1b1e; border:1px solid rgba(255,255,255,0.24); box-shadow: inset 0 0 0 3px #1b1b1e, inset 0 0 0 4px rgba(255,255,255,0.18); color:#f4f4f2; font:600 12.5px/1.4 Alexandria, sans-serif; letter-spacing:0.02em; white-space:nowrap; } .ds-patch-red { background:#d4141d; border-color:#9e0f16; box-shadow: inset 0 0 0 3px #d4141d, inset 0 0 0 4px rgba(255,255,255,0.55); color:#fff; }"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Jacket panel with outer border, stitched inner line and optional red seam.",
+      "html": "<div class=\"ds-panel ds-seam\"><span class=\"ds-patch\">Motorcycles</span><h3>Hero and SYM agents in Jordan.</h3><p>Two-wheelers for riders and fleets, with parts and service behind them.</p></div>",
+      "css": ".ds-panel { position:relative; padding:26px; border-radius:6px; background:#131315; border:1px solid rgba(255,255,255,0.12); color:#f4f4f2; font:400 15px/1.6 Alexandria, sans-serif; } .ds-panel::after { content:\"\"; position:absolute; inset:6px; border:1px dashed rgba(255,255,255,0.13); border-radius:4px; pointer-events:none; } .ds-seam { box-shadow: inset 0 1px 0 0 #ed1c26; } .ds-panel h3 { margin:12px 0 8px; font:800 24px/1.08 Alexandria, sans-serif; letter-spacing:-0.01em; } .ds-panel p { margin:0; color:rgba(244,244,242,0.72); } .ds-panel .ds-patch { display:inline-flex; padding:6px 12px; border-radius:4px; background:#1b1b1e; border:1px solid rgba(255,255,255,0.24); box-shadow: inset 0 0 0 3px #1b1b1e, inset 0 0 0 4px rgba(255,255,255,0.18); font:600 12.5px/1.4 Alexandria, sans-serif; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Label above, field below, red focus.",
+      "html": "<label class=\"ds-field\">Email <input type=\"email\" placeholder=\"you@company.com\"></label>",
+      "css": ".ds-field { display:grid; gap:6px; font:600 14px/1.4 Alexandria, sans-serif; color:#f4f4f2; } .ds-field input { padding:14px; border-radius:6px; border:1px solid rgba(255,255,255,0.24); background:#131315; color:#f4f4f2; font:400 15px/1.4 Alexandria, sans-serif; } .ds-field input::placeholder { color:rgba(244,244,242,0.5); } .ds-field input:focus { outline:2px solid #ff3b44; outline-offset:1px; border-color:#ed1c26; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Sticky 68px bar with red current-page underline and a red contact button.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Delivery</a><a class=\"ds-nav-link ds-current\" href=\"#\">Impact</a><a class=\"ds-nav-link\" href=\"#\">About</a><a class=\"ds-nav-btn\" href=\"#\">Contact us</a></nav>",
+      "css": ".ds-nav { display:flex; align-items:center; gap:4px; height:68px; padding:0 24px; background:rgba(11,11,12,0.78); border-bottom:1px solid rgba(255,255,255,0.12); } .ds-nav-link { padding:10px 12px; color:rgba(244,244,242,0.72); font:500 14.5px/1 Alexandria, sans-serif; text-decoration:none; } .ds-nav-link:hover { color:#fff; } .ds-current { color:#fff; box-shadow: inset 0 -2px 0 #ed1c26; } .ds-nav-btn { margin-left:8px; display:inline-flex; align-items:center; min-height:40px; padding:0 16px; border-radius:6px; background:#d4141d; color:#fff; font:600 14px/1 Alexandria, sans-serif; text-decoration:none; }"
+    },
+    {
+      "name": "Tape Rule",
+      "kind": "custom",
+      "refersTo": "tape",
+      "description": "Reflective-stripe divider between major sections.",
+      "html": "<div class=\"ds-tape\"></div>",
+      "css": ".ds-tape { height:10px; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.55) 0 28px, rgba(255,255,255,0.08) 28px 40px); -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 30%, #000 70%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 30%, #000 70%, transparent 100%); opacity:0.55; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Rider's Jacket",
+    "overview": "The site is built the way a delivery captain's jacket is built: colour-blocked panels joined by stitched seams, reflective tape at the breaks, and patches that say who you ride for. The ground is off-black like the Diken suit; the only colour Diken itself wears is the brand red. Every partner appears in its own colour, on its own panel, as a peer standing beside Diken rather than a client standing behind it.",
+    "keyCharacteristics": [
+      "One dark theme, page-wide, no section inverts to light.",
+      "Red leads: it carries every primary action, every emphasis word, every seam.",
+      "Panels have a 1px outer border and a 1px dashed inner border, the stitch.",
+      "Reflective-tape rules separate major sections.",
+      "Partner colours appear only on partner panels.",
+      "Alexandria for everything, English and Arabic."
+    ],
+    "rules": [
+      { "name": "The Red Under White Rule", "body": "Text on red uses Red Fill (#d4141d), not Brand Red. Brand Red is for red-on-dark only.", "section": "colors" },
+      { "name": "The Quoted Colour Rule", "body": "A partner's colour appears only inside that partner's panel or uniform. It never colours Diken's own controls, headings or rules.", "section": "colors" },
+      { "name": "The Sentence Rule", "body": "Headings are sentences and end with a period. No labels above headings.", "section": "typography" },
+      { "name": "The No Drop Shadow Rule", "body": "Nothing casts a shadow. Hover lifts a panel by 3px and raises its tone one step.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do set every figure in tabular lining numerals.",
+      "Do keep one dark theme across every page and section.",
+      "Do use Red Fill (#d4141d) under white text and Brand Red (#ed1c26) on dark.",
+      "Do give every panel both borders: 1px solid outside, 1px dashed inside at 6px.",
+      "Do end headings with a period and write them as sentences.",
+      "Do honour reduced motion: reveals and the hero stagger collapse to their final state."
+    ],
+    "donts": [
+      "Don't put a label, kicker or eyebrow above a heading; patches live inside tiles.",
+      "Don't use a partner's colour outside that partner's panel.",
+      "Don't add drop shadows, gradient text or glass on content panels.",
+      "Don't use the em dash or en dash anywhere on the site; the build refuses them.",
+      "Don't raise a seam above 1px."
+    ]
+  }
+}

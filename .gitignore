@@ -1,0 +1,12 @@
+# review captures and scratch, not part of the site
+.impeccable/review/
+.impeccable/build/
+.impeccable/mocks/
+assets/hero/*.png
+assets/hero/*.mp4
+assets/logos/raw/*.html
+assets/logos/sheet-*.html
+assets/logos/sheet-*.png
+assets/photos/plan.html
+assets/photos/plan.png
+.DS_Store
