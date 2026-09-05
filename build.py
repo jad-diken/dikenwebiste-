@@ -24,10 +24,10 @@ def head(title, desc, canonical):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
-<link rel="canonical" href="https://www.dikenbros.com/{canonical}">
+<link rel="canonical" href="https://dikendelivery.com/{canonical}">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
-<meta property="og:image" content="https://www.dikenbros.com/assets/img/hero-lineup-1200.jpg">
+<meta property="og:image" content="https://dikendelivery.com/assets/img/hero-lineup-1200.jpg">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0b0b0c">
 <link rel="icon" type="image/png" href="assets/brand/favicon-64.png">
