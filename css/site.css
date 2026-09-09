@@ -258,7 +258,6 @@ section.block.tight { padding: clamp(40px, 6vw, 80px) 0; }
 /* Partners: white stitched tiles, original logo colours, peers not clients */
 .partners { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
 .partner { position: relative; aspect-ratio: 5 / 3; display: flex; align-items: center; justify-content: center; padding: 18px 20px; border-radius: var(--radius); background: #ffffff; border: 1px solid rgba(255,255,255,0.12); transition: transform 200ms var(--ease-out); overflow: hidden; }
-.partner::after { content: ""; position: absolute; inset: 6px; border: 1px dashed rgba(11,11,12,0.22); border-radius: 4px; pointer-events: none; }
 .partner:hover { transform: translateY(-3px); }
 .partner img { max-width: 100%; max-height: 100%; object-fit: contain; }
 .partner .bs { display: flex; align-items: center; gap: 8px; }
