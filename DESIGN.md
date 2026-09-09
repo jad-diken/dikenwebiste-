@@ -116,7 +116,7 @@ Density is moderate: sections breathe, but panels are packed with real numbers a
 **Key Characteristics:**
 - One dark theme, page-wide, no section inverts to light.
 - Red leads: it carries every primary action, every emphasis word, every seam.
-- Panels have a 1px outer border and a 1px dashed inner border, the stitch.
+- Panels have a 1px outer border. The dashed inner stitch was removed on 9 Sep 2026 at Jad's request; the 1px red seam remains.
 - Reflective-tape rules separate major sections.
 - Partner colours appear only on partner panels.
 - Alexandria for everything, English and Arabic.
@@ -220,7 +220,7 @@ Five tabular figures on a blurred Ink band with Stitch dividers, the first in Br
 - **Do** set every figure in tabular lining numerals.
 - **Do** keep one dark theme across every page and section.
 - **Do** use Red Fill (#d4141d) under white text and Brand Red (#ed1c26) on dark.
-- **Do** give every panel both borders: 1px solid outside, 1px dashed inside at 6px.
+- **Do** give every panel a 1px solid border; no dashed inner line.
 - **Do** end headings with a period and write them as sentences.
 - **Do** honour reduced motion: reveals and the hero stagger collapse to their final state.
 
