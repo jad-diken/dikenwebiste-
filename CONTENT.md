@@ -41,7 +41,7 @@ Buttons: Our divisions · Contact us
 - Investments — Partners in Samhouri & Diken and Areena.
 
 ### 4. Our story (timeline)
-1990 founded, spare parts for multinationals → 2009 delivery for Talabat and Careem → regional growth, Riyadh and Dubai → today: 5,000+ captains, five agencies, two investments, first swap scooter, AI-run operations. (Years for Riyadh, Dubai, Areena to confirm.)
+1990 founded, spare parts for multinationals → 2019 delivery for Talabat and Careem → regional growth, Riyadh and Dubai → today: 5,000+ captains, five agencies, two investments, first swap scooter, AI-run operations. (Years for Riyadh, Dubai, Areena to confirm.)
 
 ### 5. Jordan's firsts (Impact band). Heading: "Work that finds you. Income that grows with you."
 - First to onboard and empower captains with disabilities, with Talabat-backed working conditions.
