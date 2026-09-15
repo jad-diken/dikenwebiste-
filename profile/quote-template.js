@@ -56,7 +56,7 @@ const meta = table([
     cell([
       p(t("Price Offer", { size: 52, bold: true })),
       p(t("عرض سعر", { size: 26, bold: true, color: MUTED }), { before: 40 }),
-      p(t("  [DIVISION]  ", { size: 16, bold: true, color: WHITE, shading: { type: ShadingType.CLEAR, fill: RED, color: "auto" } }), { before: 160 }),
+      p(t("  Distribution & Agencies  ", { size: 16, bold: true, color: WHITE, shading: { type: ShadingType.CLEAR, fill: RED, color: "auto" } }), { before: 160 }),
     ], 4600),
     cell([
       label("Offer"),
@@ -78,11 +78,11 @@ const parties = table([
   new TableRow({ children: [
     partyCell("Prepared for", ["[Client company]", "Attn. [Name], [Title]", "[Address]", "[email] · [phone]"]),
     cell([p(t(""))], 300),
-    partyCell("Prepared by", ["[Your name]", "Diken Bros Co., [Division]", "Wadi Saqra, Arar Street 14, Amman 11181", "[email]@dikenbros.com · +962 7X XXX XXXX"]),
+    partyCell("Prepared by", ["[Your name]", "Diken Bros Co., Distribution & Agencies", "Wadi Saqra, Arar Street 14, Amman 11181", "[email]@dikenbros.com · +962 7X XXX XXXX"]),
   ] }),
 ], [(CONTENT - 300) / 2, 300, (CONTENT - 300) / 2]);
 
-const subject = p([t("Subject: ", { bold: true }), t("[One sentence on what is offered, for whom, and where it is delivered.]")], { before: 240, after: 160, line: 300 });
+const subject = p([t("Subject: ", { bold: true }), t("Supply of Motul lubricants for [client / fleet / site]. Prices are for genuine Motul products supplied by Diken Bros as exclusive agent for Jordan, delivered to [delivery address].")], { before: 240, after: 160, line: 300 });
 
 // Items table
 const W = [500, CONTENT - 500 - 1000 - 900 - 1500 - 1600, 1000, 900, 1500, 1600];
@@ -91,22 +91,24 @@ const td = (s, w, o = {}) => cell([p(t(s, { size: 18 }), { align: o.right ? Alig
 const itemRow = (n, desc, sub, qty, unit, price, total, shade) => new TableRow({ children: [td(n, W[0], { shade }), td(desc, W[1], { sub, shade }), td(qty, W[2], { right: true, shade }), td(unit, W[3], { shade }), td(price, W[4], { right: true, shade }), td(total, W[5], { right: true, shade })] });
 const items = table([
   new TableRow({ tableHeader: true, children: [th("#", W[0]), th("Description", W[1]), th("Qty", W[2], true), th("Unit", W[3]), th("Unit price", W[4], true), th("Total", W[5], true)] }),
-  itemRow("1", "[Item description]", "[Part number, pack size, specification]", "0", "[unit]", "0.00", "0.00"),
-  itemRow("2", "[Item description]", "[Detail]", "0", "[unit]", "0.00", "0.00", true),
-  itemRow("3", "[Item description]", "[Detail]", "0", "[unit]", "0.00", "0.00"),
-  itemRow("4", "[Delivery / installation / service line, if any]", "[Detail]", "1", "lot", "0.00", "0.00", true),
+  itemRow("1", "[Product, grade and pack size]", "[Motul part number]", "0", "case", "0.00", "0.00"),
+  itemRow("2", "", "", "", "", "", "", true),
+  itemRow("3", "", "", "", "", "", ""),
+  itemRow("4", "", "", "", "", "", "", true),
+  itemRow("5", "", "", "", "", "", ""),
+  itemRow("6", "", "", "", "", "", "", true),
 ], W);
 
 const totRow = (k, v, grand) => new TableRow({ children: [
   cell([p(t(k, { size: grand ? 22 : 18, bold: !!grand, color: grand ? WHITE : "111214" }))], 2600, { shading: grand ? INK : undefined, borders: grand ? noBorders : { top: noBorder, left: noBorder, right: noBorder, bottom: hair }, pad: 90 }),
   cell([p(t(v, { size: grand ? 22 : 18, bold: !!grand, color: grand ? WHITE : "111214" }), { align: AlignmentType.RIGHT })], 1900, { shading: grand ? INK : undefined, borders: grand ? noBorders : { top: noBorder, left: noBorder, right: noBorder, bottom: hair }, pad: 90 }),
 ] });
-const totals = new Table({ rows: [totRow("Subtotal", "0.00"), totRow("Discount", "0.00"), totRow("Net", "0.00"), totRow("Sales tax, 16%", "0.00"), totRow("Total, JOD", "0.00", true)], width: { size: 4500, type: WidthType.DXA }, columnWidths: [2600, 1900], layout: TableLayoutType.FIXED, alignment: AlignmentType.RIGHT, borders: noBorders });
+const totals = new Table({ rows: [totRow("Subtotal", "0.00"), totRow("Discount, __%", "0.00"), totRow("Net", "0.00"), totRow("Sales tax, 16%", "0.00"), totRow("Total, JOD", "0.00", true)], width: { size: 4500, type: WidthType.DXA }, columnWidths: [2600, 1900], layout: TableLayoutType.FIXED, alignment: AlignmentType.RIGHT, borders: noBorders });
 
 const termCell = (h, body) => cell([label(h), p(t(body, { size: 17, color: "2A2C30" }), { line: 260, after: 160 })], (CONTENT - 300) / 2, { pad: 100, padx: 0 });
 const terms = table([
-  new TableRow({ children: [termCell("Validity", "30 days from the date of this offer. Prices are subject to the manufacturer's price list at the time of order confirmation."), cell([p(t(""))], 300), termCell("Payment", "50% with the purchase order, 50% on delivery. Bank transfer to Diken Bros Co., account details on the invoice.")] }),
-  new TableRow({ children: [termCell("Delivery", "Ex-stock items within 5 working days of order confirmation. Delivery by Diken company vehicles to the address above."), cell([p(t(""))], 300), termCell("Warranty and returns", "Genuine products with manufacturer warranty. Unopened, undamaged goods returnable within 14 days.")] }),
+  new TableRow({ children: [termCell("Validity", "30 days from the date of this offer. Prices are subject to Motul's price list at the time of order confirmation."), cell([p(t(""))], 300), termCell("Payment", "As agreed by contract.")] }),
+  new TableRow({ children: [termCell("Delivery", "Ex-stock items within 5 working days of order confirmation. Delivery by Diken company vehicles to the address above."), cell([p(t(""))], 300), termCell("Warranty and returns", "Genuine Motul products with manufacturer warranty. Unopened, undamaged cases returnable within 14 days.")] }),
 ], [(CONTENT - 300) / 2, 300, (CONTENT - 300) / 2]);
 
 const note = p(t("Prices in Jordanian Dinars. Sales tax at the prevailing rate. This offer is confidential and intended for the addressee. Acceptance by signature below or by purchase order referencing the offer number.", { size: 16, color: MUTED }), { before: 200, line: 260 });
