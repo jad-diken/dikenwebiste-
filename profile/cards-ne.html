@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Diken x National Express co-branded card, two concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  /* ISO ID-1 card: 85.6 x 53.98 mm, 3.18 mm corners. Rendered with 1 mm bleed. */
+  @page { size: 87.6mm 55.98mm; margin: 0; }
+  :root{ --ink:#0b0b0c; --ink-2:#131315; --red:#ed1c26; --red-fill:#d4141d; --fg:#f4f4f2; --neblue:#1f5fa8; --font:"Alexandria","Helvetica Neue",Arial,sans-serif; }
+  *{box-sizing:border-box}
+  html,body{margin:0;font-family:var(--font);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .card{position:relative;width:87.6mm;height:55.98mm;overflow:hidden;border-radius:3.6mm}
+  .num{font-family:"Share Tech Mono",monospace;letter-spacing:.12em}
+  .white{filter:brightness(0) invert(1)}
+  .chip{position:absolute;left:10mm;top:17mm;width:12.4mm;height:9.4mm;border-radius:1.6mm;background:linear-gradient(135deg,#e9d18a,#b8933e 55%,#e6cf8a);box-shadow:inset 0 0 0 .35mm rgba(0,0,0,.25)}
+  .chip::before,.chip::after{content:"";position:absolute;background:rgba(0,0,0,.28)}
+  .chip::before{left:0;right:0;top:3.1mm;height:.3mm;box-shadow:0 3.1mm 0 rgba(0,0,0,.28)}
+  .chip::after{top:0;bottom:0;left:4.1mm;width:.3mm;box-shadow:4.1mm 0 0 rgba(0,0,0,.28)}
+  .nfc{position:absolute;width:6.5mm;height:6.5mm}
+  .label{font-size:2.1mm;letter-spacing:.14em;font-weight:600}
+  .holder{font-size:3.4mm;letter-spacing:.06em;font-weight:600}
+  .pan{font-size:4.2mm}
+  .exp{font-size:2.4mm}
+  .exp small{display:block;font-size:1.5mm;letter-spacing:.08em;font-weight:600;opacity:.75;font-family:var(--font)}
+
+  /* ---------- Concept A: The Captain Card (Diken black) ---------- */
+  .a-front{background:radial-gradient(120% 90% at 20% 0%,#1c1c20 0%,#0b0b0c 55%);color:var(--fg)}
+  .a-front .tape{position:absolute;left:0;right:0;bottom:0;height:3mm;background:repeating-linear-gradient(90deg,var(--red) 0 6mm,rgba(237,28,38,.22) 6mm 8.2mm)}
+  .a-front .ne{position:absolute;left:8mm;top:6mm;height:8.4mm}
+  .a-front .nfc{right:8mm;top:6.5mm}
+  .a-front .d{position:absolute;right:7mm;bottom:8mm;width:13mm;height:13mm}
+  .a-front .pan{position:absolute;left:10mm;top:31mm;color:#fff}
+  .a-front .holder{position:absolute;left:10mm;bottom:8.5mm}
+  .a-front .exp{position:absolute;left:44mm;bottom:8.5mm}
+  .a-front .label{position:absolute;left:10mm;bottom:15.5mm;color:rgba(244,244,242,.6)}
+  .a-back{background:#141416;color:var(--fg)}
+  .mag{position:absolute;left:0;right:0;top:6mm;height:10mm;background:#0a0a0a}
+  .sig{position:absolute;left:8mm;top:20mm;width:50mm;height:8mm;background:repeating-linear-gradient(0deg,#fff 0 1mm,#f0f0ee 1mm 2mm);border-radius:.8mm}
+  .sig span{position:absolute;right:2mm;top:2.2mm;font-family:"Share Tech Mono",monospace;font-size:3mm;color:#111;letter-spacing:.1em}
+  .a-back .logos{position:absolute;left:8mm;bottom:6mm;display:flex;align-items:center;gap:4mm}
+  .a-back .logos img{height:6mm}
+  .a-back .fine{position:absolute;right:8mm;bottom:6mm;width:34mm;font-size:1.7mm;line-height:1.45;color:rgba(244,244,242,.72);text-align:right}
+  .a-back .fine b{display:block;color:#fff;font-size:2mm;margin-bottom:.6mm}
+
+  /* ---------- Concept B: The Split (red and silver) ---------- */
+  .b-front{background:linear-gradient(135deg,#e9ecef 0%,#cfd5db 45%,#b7c0c9 100%);color:#111}
+  .b-front .red{position:absolute;left:0;top:0;bottom:0;width:56%;background:linear-gradient(160deg,#ed1c26,#c8121a 70%);clip-path:polygon(0 0,100% 0,84% 100%,0 100%)}
+  .b-front .ne{position:absolute;right:6mm;top:6mm;height:8.4mm}
+  .b-front .nfc{right:8mm;top:17mm}
+  .b-front .d{position:absolute;left:8mm;top:5.5mm;width:11mm;height:11mm}
+  .b-front .word{position:absolute;left:20.5mm;top:7.2mm;color:#fff;font-weight:800;font-size:3.6mm;letter-spacing:.06em;line-height:1}
+  .b-front .word small{display:block;font-weight:500;font-size:1.7mm;letter-spacing:.16em;opacity:.85;margin-top:.7mm}
+  .b-front .pan{position:absolute;left:10mm;top:31mm;color:#fff}
+  .b-front .holder{position:absolute;left:10mm;bottom:8.5mm;color:#fff;font-size:3.1mm}
+  .b-front .exp{position:absolute;left:33mm;bottom:8.5mm;color:#fff}
+  .b-front .label{position:absolute;right:8mm;bottom:8.5mm;color:#2b3a4a;text-align:right}
+  .b-back{background:linear-gradient(135deg,#e9ecef,#c9d0d7);color:#111}
+  .b-back .sig span{color:#111}
+  .b-back .logos{position:absolute;left:8mm;bottom:6mm;display:flex;align-items:center;gap:4mm}
+  .b-back .logos img{height:6mm}
+  .b-back .fine{position:absolute;right:8mm;bottom:6mm;width:34mm;font-size:1.7mm;line-height:1.45;color:#2b3a4a;text-align:right}
+  .b-back .fine b{display:block;color:#111;font-size:2mm;margin-bottom:.6mm}
+
+  /* ---------- Screen board ---------- */
+  @media screen{
+    body{background:#141416;padding:60px;min-height:100vh}
+    h1{color:#f4f4f2;font-weight:800;font-size:30px;margin:0 0 6px}
+    p.sub{color:rgba(244,244,242,.6);margin:0 0 36px;font-size:15px;max-width:90ch}
+    .board{display:grid;grid-template-columns:1fr 1fr;gap:56px 48px;max-width:1500px}
+    .idea h2{color:#f4f4f2;font-size:20px;font-weight:600;margin:0 0 4px}
+    .idea p{color:rgba(244,244,242,.6);font-size:14px;margin:0 0 18px;max-width:60ch}
+    .lbl{color:rgba(244,244,242,.5);font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:8px}
+    .face{transform:scale(2.05);transform-origin:top left;width:87.6mm;height:55.98mm;margin-right:calc(87.6mm*1.05);margin-bottom:calc(55.98mm*1.05)}
+    .card{box-shadow:0 30px 60px rgba(0,0,0,.55),0 1px 0 rgba(255,255,255,.08)}
+  }
+  @media print{ body{background:none} .board,.idea,.faces{display:block} .idea h2,.idea p,h1,p.sub,.lbl{display:none} .face{transform:none;margin:0;page-break-after:always;break-after:page} .card{box-shadow:none;border-radius:0} }
+</style>
+</head>
+<body>
+<h1>Diken × National Express, co-branded card</h1>
+<p class="sub">ISO card size, 85.6 × 54 mm. Chip and contactless in their standard positions. Card number, name and expiry are placeholders. The payment scheme mark, if the card carries one, goes bottom right on the front and would replace the D on Concept A.</p>
+<div class="board">
+
+<div class="idea">
+  <h2>Concept A: The Captain Card</h2>
+  <p>Diken's black with the reflective tape along the bottom edge. National Express leads top left in white, the D anchors bottom right in red. Reads as a Diken card issued by National Express: the card a captain carries.</p>
+  <span class="lbl">Front</span>
+  <div class="face"><div class="card a-front">
+    <img class="ne white" src="../assets/logos/national-express.png" alt="National Express">
+    <svg class="nfc" viewBox="0 0 24 24" fill="none" stroke="#f4f4f2" stroke-width="1.8" stroke-linecap="round"><path d="M6 8.5a8 8 0 0 1 0 7"/><path d="M9.5 6a12 12 0 0 1 0 12"/><path d="M13 3.5a16 16 0 0 1 0 17"/></svg>
+    <div class="chip"></div>
+    <div class="pan num">5123 45•• •••• 7890</div>
+    <div class="label">DIKEN CAPTAIN CARD</div>
+    <div class="holder">JAD DIKEN</div>
+    <div class="exp num"><small>VALID THRU</small>09/29</div>
+    <img class="d" src="../assets/brand/diken-d-crop.png" alt="">
+    <div class="tape"></div>
+  </div></div>
+  <span class="lbl">Back</span>
+  <div class="face"><div class="card a-back">
+    <div class="mag"></div>
+    <div class="sig"><span>123</span></div>
+    <div class="logos"><img class="white" src="../assets/logos/national-express.png" alt="National Express"><img class="white" src="../assets/brand/diken-d-crop.png" alt="Diken"></div>
+    <div class="fine"><b>Issued by National Express for Diken Bros</b>Customer service +962 6 XXX XXXX. If found, return to any National Express branch. Use of this card is subject to the cardholder agreement.</div>
+  </div></div>
+</div>
+
+<div class="idea">
+  <h2>Concept B: The Split</h2>
+  <p>Two brands, two fields. Diken red with the D and wordmark on the left, National Express silver on the right, met by a diagonal that echoes the lightning bolt. Feels like a partnership between equals, and it sits next to National Express's own silver card naturally.</p>
+  <span class="lbl">Front</span>
+  <div class="face"><div class="card b-front">
+    <div class="red"></div>
+    <img class="d white" src="../assets/brand/diken-d-crop.png" alt="">
+    <div class="word">DIKEN<small>CAPTAIN CARD</small></div>
+    <img class="ne" src="../assets/logos/national-express.png" alt="National Express">
+    <svg class="nfc" viewBox="0 0 24 24" fill="none" stroke="#2b3a4a" stroke-width="1.8" stroke-linecap="round"><path d="M6 8.5a8 8 0 0 1 0 7"/><path d="M9.5 6a12 12 0 0 1 0 12"/><path d="M13 3.5a16 16 0 0 1 0 17"/></svg>
+    <div class="chip"></div>
+    <div class="pan num">5123 45•• •••• 7890</div>
+    <div class="holder">JAD DIKEN</div>
+    <div class="exp num"><small>VALID THRU</small>09/29</div>
+    <div class="label">PREPAID · JOD</div>
+  </div></div>
+  <span class="lbl">Back</span>
+  <div class="face"><div class="card b-back">
+    <div class="mag"></div>
+    <div class="sig"><span>123</span></div>
+    <div class="logos"><img src="../assets/logos/national-express.png" alt="National Express"><img src="../assets/brand/diken-d-crop.png" alt="Diken"></div>
+    <div class="fine"><b>Issued by National Express for Diken Bros</b>Customer service +962 6 XXX XXXX. If found, return to any National Express branch. Use of this card is subject to the cardholder agreement.</div>
+  </div></div>
+</div>
+
+</div>
+</body>
+</html>
