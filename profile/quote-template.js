@@ -10,6 +10,7 @@ const {
 const RED = "D4141D", INK = "0B0B0C", MUTED = "6B6E73", LINE = "E3E5E8", WHITE = "FFFFFF", PALE = "FAFAFA";
 const FONT = "Arial";
 const logo = fs.readFileSync(path.join(__dirname, "..", "assets", "brand", "diken-d-crop.png"));
+const motul = fs.readFileSync(path.join(__dirname, "..", "assets", "logos", "motul-1k.png"));
 const PAGE_W = 11906, MARGIN = 907, CONTENT = PAGE_W - 2 * MARGIN; // A4 in DXA, 16 mm margins
 
 const noBorder = { style: BorderStyle.NONE, size: 0, color: WHITE };
@@ -29,14 +30,18 @@ const headTable = table([
     cell([
       p(t("DIKEN BROS", { size: 44, bold: true, color: WHITE }), { line: 240 }),
       p(t("POWER · PERFORMANCE · PRECISION", { size: 17, bold: true, color: "ED1C26", characterSpacing: 60 }), { before: 40 }),
-    ], 5800, { shading: INK, padx: 240, valign: VerticalAlign.CENTER }),
+    ], 4300, { shading: INK, padx: 240, valign: VerticalAlign.CENTER }),
+    cell([
+      p(t("EXCLUSIVE AGENT FOR JORDAN", { size: 13, bold: true, color: "B8BABD", characterSpacing: 40 }), { after: 60 }),
+      p(new ImageRun({ type: "png", data: motul, transformation: { width: 92, height: 25 } })),
+    ], 2200, { shading: INK, padx: 120, valign: VerticalAlign.CENTER }),
     cell([
       p([t("Tel  ", { bold: true, color: WHITE, size: 18 }), t("06 416 6660", { color: WHITE, size: 18 })], { align: AlignmentType.RIGHT }),
       p([t("Email  ", { bold: true, color: WHITE, size: 18 }), t("info@dikenbros.com", { color: WHITE, size: 18 })], { align: AlignmentType.RIGHT }),
       p([t("Web  ", { bold: true, color: WHITE, size: 18 }), t("dikendelivery.com", { color: WHITE, size: 18 })], { align: AlignmentType.RIGHT }),
-    ], CONTENT - 6900, { shading: RED, padx: 240, valign: VerticalAlign.CENTER }),
+    ], CONTENT - 7600, { shading: RED, padx: 240, valign: VerticalAlign.CENTER }),
   ] }),
-], [1100, 5800, CONTENT - 6900]);
+], [1100, 4300, 2200, CONTENT - 7600]);
 
 const header = new Header({ children: [headTable, p(t(" ", { size: 6 }), { border: { bottom: { style: BorderStyle.SINGLE, size: 18, color: "ED1C26" } }, after: 200 })] });
 const footer = new Footer({ children: [

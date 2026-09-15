@@ -18,12 +18,15 @@
   .head{background:var(--ink);color:#fff;padding:6mm 16mm 5mm;position:relative;overflow:hidden}
   .head::after{content:"";position:absolute;right:-30mm;top:-10mm;bottom:-10mm;width:70mm;background:var(--red-fill);transform:skewX(-18deg)}
   .head .brand{display:flex;align-items:center;gap:6mm;position:relative;z-index:1}
-  .head .brand .box{width:17mm;height:17mm;background:#fff;display:flex;align-items:center;justify-content:center;border-radius:1.5mm}
-  .head .brand img{width:13.5mm;height:13.5mm;object-fit:contain}
-  .head .word{font-weight:800;font-size:8.5mm;letter-spacing:.02em;line-height:1}
-  .head .tag{font-size:3.2mm;letter-spacing:.14em;color:var(--red);font-weight:600;margin-top:1.4mm;border-bottom:.35mm solid #fff;display:inline-block;padding-bottom:1mm}
-  .head .contact{position:absolute;right:16mm;top:6mm;z-index:1;text-align:right;font-size:3.1mm;line-height:1.65}
+  .head .brand .box{width:16mm;height:16mm;background:#fff;display:flex;align-items:center;justify-content:center;border-radius:1.5mm}
+  .head .brand img{width:12.5mm;height:12.5mm;object-fit:contain}
+  .head .word{font-weight:800;font-size:7.5mm;letter-spacing:.02em;line-height:1}
+  .head .tag{font-size:2.8mm;letter-spacing:.12em;color:var(--red);font-weight:600;margin-top:1.4mm;border-bottom:.35mm solid #fff;display:inline-block;padding-bottom:1mm}
+  .head .contact{position:absolute;right:16mm;top:6.5mm;z-index:1;text-align:right;font-size:3mm;line-height:1.65}
   .head .contact b{font-weight:600}
+  .head .agent{margin-left:5mm;padding-left:4.5mm;border-left:.3mm solid rgba(255,255,255,.28);display:flex;flex-direction:column;gap:1.5mm;align-self:center}
+  .head .agent small{font-size:2.2mm;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:600;white-space:nowrap}
+  .head .agent img{height:6.8mm;width:auto;display:block;border-radius:.6mm}
   .bar{height:2.5mm;background:var(--red)}
 
   /* Meta */
@@ -87,8 +90,9 @@
     <div class="brand">
       <div class="box"><img src="../assets/brand/diken-d-crop.png" alt=""></div>
       <div><div class="word">DIKEN BROS</div><div class="tag">POWER · PERFORMANCE · PRECISION</div></div>
+      <div class="agent"><small>Exclusive agent for Jordan</small><img src="../assets/logos/motul.svg" alt="Motul"></div>
     </div>
-    <div class="contact"><b>Tel</b> 06 416 6660<br><b>Email</b> info@dikenbros.com<br><b>Web</b> dikendelivery.com</div>
+    <div class="contact"><b>06 416 6660</b><br>info@dikenbros.com<br>dikendelivery.com</div>
   </div>
   <div class="bar"></div>
 
