@@ -10,3 +10,6 @@ assets/logos/sheet-*.png
 assets/photos/plan.html
 assets/photos/plan.png
 .DS_Store
+profile/node_modules/
+profile/package.json
+profile/package-lock.json
