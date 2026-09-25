@@ -17,3 +17,6 @@ profile/package-lock.json
 # Investor material stays local: contains partners' personal contact details, repo is public
 profile/investor.html
 profile/Diken-Bros-Investor-Brief-2026.pdf
+profile/org.html
+profile/org-build.py
+profile/Diken-Bros-Organizational-Structure-2026.pdf
