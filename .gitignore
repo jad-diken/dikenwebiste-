@@ -13,3 +13,7 @@ assets/photos/plan.png
 profile/node_modules/
 profile/package.json
 profile/package-lock.json
+
+# Investor material stays local: contains partners' personal contact details, repo is public
+profile/investor.html
+profile/Diken-Bros-Investor-Brief-2026.pdf

@@ -39,11 +39,11 @@ WRAP = Alignment(horizontal="left", vertical="top", wrap_text=True)
 # Letterhead, rows 1 to 5
 for r in range(1, 6): ws.row_dimensions[r].height = 15
 band(1, 5, INK); band(1, 5, REDF, "F")
-logo = Image(os.path.join(HERE, "..", "assets", "brand", "diken-d-512.png")); logo.width = logo.height = 48; ws.add_image(logo, "A1")
+logo = Image(os.path.join(HERE, "..", "assets", "brand", "diken-d-96.png")); logo.width = logo.height = 48; ws.add_image(logo, "A1")
 ws.merge_cells("B1:C2"); put("B1", "DIKEN BROS", font(20, True, "FFFFFF"), Alignment(horizontal="left", vertical="bottom"))
 ws.merge_cells("B3:C3"); put("B3", "POWER · PERFORMANCE · PRECISION", font(7.5, True, RED), Alignment(horizontal="left", vertical="top"))
 ws.merge_cells("D2:E2"); put("D2", "EXCLUSIVE AGENT FOR JORDAN", font(6.5, True, "B8BABD"), Alignment(horizontal="left", vertical="bottom"), fill(INK)); ws.merge_cells("D3:E4")
-motul = Image(os.path.join(HERE, "..", "assets", "logos", "motul-1k.png")); motul.width, motul.height = 92, 25; ws.add_image(motul, "D3")
+motul = Image(os.path.join(HERE, "..", "assets", "logos", "motul-186.png")); motul.width, motul.height = 92, 25; ws.add_image(motul, "D3")
 put("F2", "06 416 6660", font(9.5, True, "FFFFFF"), R); put("F3", "info@dikenbros.com", font(9, False, "FFFFFF"), R); put("F4", "dikendelivery.com", font(9, False, "FFFFFF"), R)
 ws.row_dimensions[6].height = 5; band(6, 6, RED)
 ws.row_dimensions[7].height = 10
